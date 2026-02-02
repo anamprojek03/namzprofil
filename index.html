@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAMZ MODZ | PROFESSIONAL DASHBOARD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        :root { --accent: #ff0000; --bg: #080808; }
+        body { background-color: var(--bg); color: #fff; font-family: 'Space Grotesk', sans-serif; background-image: radial-gradient(circle at top right, rgba(255,0,0,0.05), transparent); }
+        .pro-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; transition: 0.3s; }
+        .pro-card:hover { border-color: var(--accent); transform: translateY(-3px); background: rgba(255, 0, 0, 0.02); box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1); }
+        .status-badge { display: flex; align-items: center; gap: 5px; font-size: 9px; font-weight: 800; color: #00ff88; text-transform: uppercase; margin-bottom: 2px; }
+        .dot { width: 6px; height: 6px; background: #00ff88; border-radius: 50%; animation: blink 1.5s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; box-shadow: 0 0 5px #00ff88; } 50% { opacity: 0.3; } }
+        #bottomSheet { transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); background: #0d0d0d; border-top: 2px solid var(--accent); }
+        #bottomSheet.active { transform: translateY(0); }
+    </style>
+</head>
+<body class="max-w-md mx-auto p-6 pb-24">
+
+    <header class="text-center py-10">
+        <div class="relative inline-block mb-4">
+            <div class="absolute inset-0 bg-red-600 blur-[40px] opacity-20"></div>
+            <img src="https://img.sanishtech.com/u/44dacbc48aa050ab167eca86c1dde7d7.jpg" class="relative w-24 h-24 rounded-3xl border border-white/10 p-1 bg-black object-cover">
+        </div>
+        <h1 class="text-3xl font-bold tracking-tighter uppercase">NAMZ <span class="text-red-600">MODZ</span></h1>
+        <div class="mt-3">
+            <p class="text-[14px] text-white font-bold tracking-widest uppercase italic mb-1">Elite Modding Service</p>
+            <p class="text-[11px] text-gray-400 leading-relaxed font-medium">Anti-Ban • Secure Injection • High Quality</p>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-2 gap-4 mb-10">
+        <a href="https://wa.me/6285741193887" class="bg-red-600 py-4 rounded-2xl text-center text-xs font-bold uppercase tracking-widest shadow-lg shadow-red-900/20">Order</a>
+        <a href="https://whatsapp.com/channel/0029VakFTZvEquiPkaGoKl0e" target="_blank" class="bg-white/5 border border-white/10 py-4 rounded-2xl text-center text-xs font-bold uppercase tracking-widest">Channel</a>
+    </div>
+
+    <div class="space-y-3">
+        <div onclick="openSheet('HG CHEATS NO ROOT', 'FF ANDROID', [['1 DAY', '25K'], ['5 DAY', '55K'], ['10 DAY', '70K'], ['15 DAY', '100K'], ['20 DAY', '120K'], ['30 DAY', '250K']])" class="pro-card p-5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-green-500 border border-white/5"><i class="fas fa-shield-virus text-xl"></i></div>
+                <div><div class="status-badge"><span class="dot"></span> Online</div><h3 class="font-bold text-sm uppercase">HG CHEATS NO ROOT</h3></div>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-gray-700"></i>
+        </div>
+
+        <div onclick="openSheet('AIMXIT INJECTOR', 'NAMZ SPECIAL', [['1 DAY', '10K'], ['5 DAY', '25K'], ['15 DAY', '40K'], ['30 DAY', '80K'], ['LIFETIME', '50K']])" class="pro-card p-5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-red-500 border border-white/5"><i class="fas fa-crosshairs text-xl"></i></div>
+                <div><div class="status-badge"><span class="dot"></span> Online</div><h3 class="font-bold text-sm uppercase">AIMXIT INJECTOR</h3></div>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-gray-700"></i>
+        </div>
+
+        <div onclick="openSheet('APK MOD SYAHRUL', 'FF NO ROOT', [['1 DAY', '15K'], ['3 DAY', '30K'], ['7 DAY', '50K'], ['30 DAY', '250K']])" class="pro-card p-5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-blue-500 border border-white/5"><i class="fas fa-robot text-xl"></i></div>
+                <div><div class="status-badge"><span class="dot"></span> Online</div><h3 class="font-bold text-sm uppercase">APK MOD SYAHRUL</h3></div>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-gray-700"></i>
+        </div>
+
+        <div onclick="openSheet('FILE ANDROID FF', 'REGEDIT ANDRO', [['HEAD AIM V2', '30K'], ['DRAG HS', '50K'], ['HOLOGRAM', '20K']])" class="pro-card p-5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-purple-500 border border-white/5"><i class="fab fa-android text-xl"></i></div>
+                <div><div class="status-badge"><span class="dot"></span> Online</div><h3 class="font-bold text-sm uppercase">FILE ANDROID FF</h3></div>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-gray-700"></i>
+        </div>
+
+        <div onclick="openSheet('FILE IPHONE FF', 'REGEDIT IOS', [['AIMNECK', '150K'], ['AIMDRAG', '150K'], ['AIMBODY', '180K']])" class="pro-card p-5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-gray-300 border border-white/5"><i class="fab fa-apple text-xl"></i></div>
+                <div><div class="status-badge"><span class="dot"></span> Online</div><h3 class="font-bold text-sm uppercase">FILE IPHONE FF</h3></div>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-gray-700"></i>
+        </div>
+
+        <div onclick="openSheet('FLUORITE IOS', 'FF PREMIUM IOS', [['1 DAY', '65K'], ['7 DAY', '150K'], ['30 DAY', '350K']])" class="pro-card p-5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-cyan-400 border border-white/5"><i class="fas fa-gem text-xl"></i></div>
+                <div><div class="status-badge"><span class="dot"></span> Online</div><h3 class="font-bold text-sm uppercase">FLUORITE IOS</h3></div>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-gray-700"></i>
+        </div>
+
+        <div onclick="openSheet('PANEL INTERNAL [PC]', 'PC VERSION', [['1 DAY', '30K'], ['30 DAY', '120K'], ['PERMANEN', '800K']])" class="pro-card p-5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-orange-500 border border-white/5"><i class="fas fa-desktop text-xl"></i></div>
+                <div><div class="status-badge"><span class="dot"></span> Online</div><h3 class="font-bold text-sm uppercase">PANEL INTERNAL [PC]</h3></div>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-gray-700"></i>
+        </div>
+
+        <div onclick="openSheet('BYPAS UID [PC]', 'PC SYSTEM', [['3 DAY', '25K'], ['30 DAY', '80K']])" class="pro-card p-5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-yellow-500 border border-white/5"><i class="fas fa-fingerprint text-xl"></i></div>
+                <div><div class="status-badge"><span class="dot"></span> Online</div><h3 class="font-bold text-sm uppercase">BYPAS UID [PC]</h3></div>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-gray-700"></i>
+        </div>
+    </div>
+
+    <div class="mt-12">
+        <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-red-600 mb-6 flex items-center gap-2"><i class="fas fa-star text-[10px]"></i> Client Testimonials</h2>
+        <div class="space-y-4">
+            <div class="pro-card p-4 border-l-4 border-red-600 bg-red-600/5">
+                <div class="flex items-center gap-2 mb-2"><div class="flex text-[8px] text-yellow-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="text-[9px] text-gray-500">@King_Gamerz</span></div>
+                <p class="text-[11px] text-gray-300 italic">"Gokil parah! AimXit Injector-nya auto-headshot terus. Anti-ban real!"</p>
+            </div>
+            <div class="pro-card p-4 border-l-4 border-blue-600 bg-blue-600/5">
+                <div class="flex items-center gap-2 mb-2"><div class="flex text-[8px] text-yellow-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="text-[9px] text-gray-500">@SultanFF_Ios</span></div>
+                <p class="text-[11px] text-gray-300 italic">"Regedit IOS worth it banget. Harganya sebanding sama kualitasnya!"</p>
+            </div>
+            <div class="pro-card p-4 border-l-4 border-green-600 bg-green-600/5">
+                <div class="flex items-center gap-2 mb-2"><div class="flex text-[8px] text-yellow-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="text-[9px] text-gray-500">@Rakyat_Cheat</span></div>
+                <p class="text-[11px] text-gray-300 italic">"Admin fast respon, file langsung dikirim. Tutorialnya gampang dipahami."</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" class="fixed inset-0 bg-black/90 hidden z-40 backdrop-blur-md" onclick="closeSheet()"></div>
+    <div id="bottomSheet" class="fixed bottom-0 left-0 right-0 z-50 p-8 rounded-t-[40px] max-h-[80vh] overflow-y-auto">
+        <div class="w-12 h-1.5 bg-white/10 rounded-full mx-auto mb-8"></div>
+        <div class="mb-6">
+            <span id="sheetCategory" class="text-[10px] font-bold text-red-600 tracking-widest uppercase block mb-1">Category</span>
+            <h2 id="sheetTitle" class="text-2xl font-bold uppercase tracking-tighter">Product</h2>
+        </div>
+        <div id="priceList" class="space-y-3"></div>
+        <button onclick="closeSheet()" class="w-full mt-8 text-gray-500 text-[10px] font-bold uppercase tracking-widest">Back to Menu</button>
+    </div>
+
+    <script>
+        const NO_WA = "6285741193887";
+        function openSheet(name, category, prices) {
+            document.getElementById('sheetTitle').innerText = name;
+            document.getElementById('sheetCategory').innerText = category;
+            const priceContainer = document.getElementById('priceList');
+            priceContainer.innerHTML = '';
+            prices.forEach(p => {
+                const msg = encodeURIComponent(`Halo Admin NAMZ MODZ 💀\n\nSaya ingin order:\n📌 Produk: ${name}\n⏱ Durasi: ${p[0]}\n💰 Harga: ${p[1]}\n\nGas min! 🔥`);
+                priceContainer.innerHTML += `<div onclick="window.location.href='https://wa.me/${NO_WA}?text=${msg}'" class="flex justify-between items-center p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-red-600 transition-all cursor-pointer"><span class="font-bold text-gray-300">${p[0]}</span><span class="font-bold text-white text-lg">Rp${p[1].replace('K','000')}</span></div>`;
+            });
+            document.getElementById('overlay').classList.remove('hidden');
+            setTimeout(() => document.getElementById('bottomSheet').classList.add('active'), 10);
+        }
+        function closeSheet() {
+            document.getElementById('bottomSheet').classList.remove('active');
+            setTimeout(() => document.getElementById('overlay').classList.add('hidden'), 400);
+        }
+    </script>
+</body>
+</html>
